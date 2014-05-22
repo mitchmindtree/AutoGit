@@ -87,9 +87,9 @@ def main():
         message = cleanMessage(args['<message>'])
     else:
         message = raw_input("Commit message: ")
-    t = Thread(target = callGit, args = (path, message))
-    t.start()
-    #callGit(path, message)
+    #t = Thread(target = callGit, args = (path, message))
+    #t.start()
+    callGit(path, message)
 
 
 if __name__ == "__main__":
