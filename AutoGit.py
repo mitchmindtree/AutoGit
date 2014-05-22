@@ -55,16 +55,17 @@ def callGit(path, message):
         if i == 0:
             child.kill(0)
             raise Exception("Github seems to want your user and pw...")
-        elif i == 1:
-            "EOF reached dawg."
-            child.wait()
         else:
-            child.wait()
+            print("Before")
+            print(child.before)
+            print("After")
+            print(child.after)
+            print("Added, committed and pushed your stuff dawg.")
     except Exception, e:
         print(e)
         print("Going to try configure your remote so that I won't require usr/pw in the future...")
         configureGit()
-    print("Added, committed and pushed your stuff dawg.")
+        print("Added, committed and pushed your stuff dawg.")
 
         
 def cleanMessage(message):
