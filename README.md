@@ -23,6 +23,16 @@ You can also call the python script by itself if you prefer:
     $ python AutoGit.py <path> <message>
 
 
+Install .vim
+------------
+
+    cd ~/.vim/plugin
+    git clone https://github.com/mitchmindtree/AutoGit.git
+
+Note: You may need to actually make the `.vim/` and `plugin/` directories if
+haven't already for another plugin.
+
+
 Dependencies
 ------------
 
