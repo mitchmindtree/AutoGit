@@ -25,6 +25,7 @@ from subprocess import PIPE, Popen, call
 from docopt import docopt
 from pprint import pprint
 from getpass import getpass
+from threading import Thread
 import pexpect
 
 
@@ -60,6 +61,7 @@ def callGit(path, message):
         print(e)
         print("Going to try configure your remote so that I won't require usr/pw in the future...")
         configureGit()
+    print("Added, committed and pushed your stuff dawg.")
 
         
 def cleanMessage(message):
@@ -85,8 +87,9 @@ def main():
         message = cleanMessage(args['<message>'])
     else:
         message = raw_input("Commit message: ")
-    callGit(path, message)
-    print("Added, committed and pushed your stuff dawg.")
+    t = Thread(target = callGit, args = (path, message))
+    t.start()
+    #callGit(path, message)
 
 
 if __name__ == "__main__":
