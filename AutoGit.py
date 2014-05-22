@@ -50,7 +50,7 @@ def callGit(path, message):
     os.system("git commit -m '" + message + "'")
     try:
         child = pexpect.spawn("git push origin master")
-        i = child.expect(["Username for 'https://github.com': ", pexpect.EOF], 10)
+        i = child.expect(["Username for 'https://github.com': ", pexpect.EOF], 20)
         if i == 0:
             child.kill(0)
             raise Exception("Github seems to want your user and pw...")
