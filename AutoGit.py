@@ -56,10 +56,7 @@ def callGit(path, message):
             child.kill(0)
             raise Exception("Github seems to want your user and pw...")
         else:
-            print("Before")
             print(child.before)
-            print("After")
-            print(child.after)
             print("Added, committed and pushed your stuff dawg.")
     except Exception, e:
         print(e)
@@ -91,9 +88,9 @@ def main():
         message = cleanMessage(args['<message>'])
     else:
         message = raw_input("Commit message: ")
-    #t = Thread(target = callGit, args = (path, message))
-    #t.start()
-    callGit(path, message)
+    t = Thread(target = callGit, args = (path, message))
+    t.start()
+    # callGit(path, message)
 
 
 if __name__ == "__main__":
