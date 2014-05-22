@@ -12,5 +12,5 @@ function RunAutoGit(dir, ...)
     silent "!python ~/.vim/plugin/AutoGit/AutoGit.py " . a:dir . " '" . message . "'"
 endfunction
 
-com -nargs=* AutoGit call RunAutoGit(getcwd(), <f-args>)
+silent -nargs=* AutoGit call RunAutoGit(getcwd(), <f-args>)
 
