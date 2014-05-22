@@ -16,24 +16,24 @@ ask for your user & pw again. i.e.
     - Find repo name
     - Request `<USER>`
     - Request `<PW>`
-    `git config remote.origin.url https://<USER>:<PW>@github.com/<USER>/<REPO_NAME>`
+    - `git config remote.origin.url https://<USER>:<PW>@github.com/<USER>/<REPO_NAME>`
 
 You can also call the python script by itself if you prefer:
 
     $ python AutoGit.py <path> <message>
 
+
 Dependencies
 ------------
 
-- Docopt for the CLI.
-- pexpect for working with Git CLI.
+- [Docopt] (http://docopt.org/) for the CLI.
 
-ToDo
-----
+    $ pip install docopt
 
-- Thread the whole process, only be visible if needed for user/pw.
-- If tmux session, have it occur in separate tmux window.
-- If no tmux session, have it occur in separate tab.
+- [pexpect] (http://pexpect.readthedocs.org/en/latest/) for working with Git CLI.
+
+    $ pip install pexpect
+
 
 Note
 ----

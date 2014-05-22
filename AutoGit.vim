@@ -9,8 +9,8 @@ function RunAutoGit(dir, ...)
     for s in a:000
         let message=message . " " . s
     endfor
-    silent "!python ~/.vim/plugin/AutoGit/AutoGit.py " . a:dir . " '" . message . "'"
+    execute "!python ~/.vim/plugin/AutoGit/AutoGit.py " . a:dir . " '" . message . "'"
 endfunction
 
-silent -nargs=* AutoGit call RunAutoGit(getcwd(), <f-args>)
+com -nargs=* AutoGit call RunAutoGit(getcwd(), <f-args>)
 

@@ -25,7 +25,6 @@ from subprocess import PIPE, Popen, call
 from docopt import docopt
 from pprint import pprint
 from getpass import getpass
-from threading import Thread
 import pexpect
 
 
@@ -88,9 +87,7 @@ def main():
         message = cleanMessage(args['<message>'])
     else:
         message = raw_input("Commit message: ")
-    t = Thread(target = callGit, args = (path, message))
-    t.start()
-    # callGit(path, message)
+    callGit(path, message)
 
 
 if __name__ == "__main__":
